@@ -1,6 +1,16 @@
-import numpy as np
-from pyzbar.pyzbar import decode
-import cv2
+import os
+try:
+    import cv2
+except ModuleNotFoundError:
+    os.system('pip install opencv-python')
+try:
+    import numpy as np
+except ModuleNotFoundError:
+    os.system('pip install numpy')
+try:
+    from pyzbar.pyzbar import decode
+except ModuleNotFoundError:
+    os.system('pip install pyzbar')
 
 cap=cv2.VideoCapture(0)
 cap.set(3,640)
